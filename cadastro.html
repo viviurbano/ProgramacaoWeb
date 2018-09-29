@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<!-- Bootstrap -->
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- CSS -->
+        <link href="css/cadastro.css" rel="stylesheet">
+	</head>
+	<body>
+        <center>
+        	<div class='header-box'>
+                <h1>CADASTRO</h1>
+            </div>
+		</center>
+
+	<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<div class="topnav" id="myTopnav">
+	  <a href="#home" class="active">Home</a>
+	  <a href="#news">News</a>
+	  <a href="#contact">Contact</a>
+	  <a href="#about">About</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	  </a>
+	</div>		
+		
+		
+		
+		
+
+		<div class="conteiner">
+			<form action="#" method="post">
+					<div class="campo">
+						<label for="user">Código de Usuário</label>	
+						<input type="text" id="user" name="user" style="width: 15em" value="">
+					</div>
+
+					<div class="campo">
+						<label for="nome">Nome</label>
+						<input type="text" id="nome" name="nome" style="width: 40em" value="">
+					</div>
+
+				<fieldset>
+					<fieldset class="grupo">
+						<div class="campo">
+							<label for="nome">Email</label>
+							<input type="text" id="email" name="email" style="width: 40em" value="">
+
+						</div>
+					</fieldset>
+					
+					<fieldset class="grupo">
+						<div class="campo">
+							<label for="telefone">Telefone</label>
+							<input type="tel" id="telefone" name="telefone" value="">
+						</div>
+						<div class="campo">
+							<label for="password">Senha</label>
+							<input type="password" name="senha" /> <br>
+							
+						</div>
+					</fieldset>
+					
+					<div class="campo">
+						<label>Usuário ativo?</label>
+						<label> <input type="radio" name="sexo" value="nao"> Não
+								<input type="radio" name="sexo" value="sim"> Sim
+						</label>
+					<br>	
+					</div>	
+					<div>
+						<input type="button" value="Salvar" onclick="validar();">
+					</div>
+					
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
+
+
+<script lang="javascript">
+function validar(){
+	
+	var senha = document.getElementsByName("senha")[0].value;
+	//length conta a quantidade de caracteres informados
+	if(nome.value.length < 3){
+		alert("Digite um nome válido!");
+		return false;
+	}
+	if(senha.length < 6)
+	{
+		alert("Digite uma senha com no mínimo 6 caracteres");
+		return false;
+	}
+	if(email.value.length < 6       || 
+	   email.value.indexOf("@") < 1 ||
+	   email.value.indexOf(".") < 1 
+	   )
+	   {
+			alert("email invalido, verifique !");
+			return false;
+	   }
+}
+</script>

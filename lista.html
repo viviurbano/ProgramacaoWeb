@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<!-- Bootstrap -->
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- CSS -->
+        <link href="css/cadastro.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body onload="carregarJSON()" >
+        <center>
+        	<div class='header-box'>
+                <h1>LISTA DE USUÁRIOS</h1>
+            </div>
+		</center>
+		
+		<table id="usuarios_table">
+			<tr>
+				<th>CÓDIGO</th>
+				<th>NOME</th>
+				<th>E-MAIL</th>
+				<th>TELEFONE</th>
+				<th>ATIVO</th>
+			</tr>
+		</table>
+
+<script>
+	function carregarJSON(){
+	}
+	
+	var jqxhr = $.getJSON( "lista.json", function() {
+  console.log( "success" );
+})
+  .done(function(data ) {
+    console.log( "second success" );
+  })
+  .fail(function() {
+    console.log( "error" );
+  })
+  .always(function() {
+    console.log( "complete" );
+  });
+ 
+// Perform other work here ...
+ 
+// Set another completion function for the request above
+jqxhr.complete(function(data ) {
+  console.log( "second complete" );
+  
+  var json = data.responseJSON;
+  var usuariosTable = document.querySelector("#usuarios_table");
+  
+  if(json && json.usuarios){
+	for(var i=0; i<json.usuarios.length; i++){
+		var usuario = json.usuarios[i];
+		
+		var newtr = document.createElement("tr");
+		
+		var newtdCodigo = document.createElement("td");
+		var newValueCodigo = document.createTextNode(usuario.codigo);
+		newtdCodigo.appendChild(newValueCodigo);
+		newtr.appendChild(newtdCodigo);
+		
+		var newtdNome = document.createElement("td");
+		var newValueNome = document.createTextNode(usuario.nome);
+		newtdNome.appendChild(newValueNome);
+		newtr.appendChild(newtdNome);
+
+		var newtdEmail = document.createElement("td");
+		var newValueEmail = document.createTextNode(usuario.email);
+		newtdEmail.appendChild(newValueEmail);
+		newtr.appendChild(newtdEmail);
+		
+		var newtdTelefone = document.createElement("td");
+		var newValueTelefone = document.createTextNode(usuario.telefone);
+		newtdTelefone.appendChild(newValueTelefone);
+		newtr.appendChild(newtdTelefone);		
+		
+		var newtdAtivo = document.createElement("td");
+		var newValueAtivo; 
+		if(usuario.ativo){
+			newValueAtivo = document.createTextNode("Sim");
+		}
+		else{
+			newValueAtivo = document.createTextNode("Não");
+		}
+		newtdAtivo.appendChild(newValueAtivo);
+		newtr.appendChild(newtdAtivo);	
+		
+		usuariosTable.appendChild(newtr);
+		
+	}
+  }
+  
+  
+});
+
+
+</script>		
+</body>
+</html>
+

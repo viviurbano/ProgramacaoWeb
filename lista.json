@@ -1,0 +1,39 @@
+{
+  "usuarios": [
+    {
+	"codigo" : "123", 
+	"nome" : "Viviane", 
+	"email" : "vivi@br.com",    
+	"telefone": "9999-9999",	
+	"ativo": false
+    },
+    {
+	"codigo" : "124", 
+	"nome" : "Fabio", 
+	"email" : "fabio@br.com",    
+	"telefone": "9999-9999",	
+	"ativo": true
+    },
+    {
+	"codigo" : "125", 
+	"nome" : "Madruga", 
+	"email" : "madruga@br.com",    
+	"telefone": "9999-9999",	
+	"ativo": true
+    },
+    {
+	"codigo" : "126", 
+	"nome" : "Florinda", 
+	"email" : "florinda@br.com",    
+	"telefone": "9999-9999",	
+	"ativo": true
+    },
+    {
+	"codigo" : "127", 
+	"nome" : "Kiko", 
+	"email" : "kiko@br.com",    
+	"telefone": "9999-9999",	
+	"ativo": false
+    }
+	]
+}
